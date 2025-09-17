@@ -5,6 +5,6 @@ import org.tradebyte.todolist.repository.entity.Item;
 
 import java.util.UUID;
 
-public interface ItemRepository extends JpaRepository<Item, UUID> {
+public interface TodoItemRepository extends JpaRepository<Item, UUID> {
 
 }

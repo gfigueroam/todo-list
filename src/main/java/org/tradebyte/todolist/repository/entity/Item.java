@@ -19,7 +19,7 @@ public class Item {
     @Column(nullable = false)
     private String description;
 
-    @Enumerated(value = EnumType.STRING)
+    @Enumerated(value = EnumType.ORDINAL)
     private Status status = Status.NOT_DONE;
 
     @CreationTimestamp

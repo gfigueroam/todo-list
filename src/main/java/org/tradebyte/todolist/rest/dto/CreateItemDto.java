@@ -10,14 +10,14 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class CreateItemDTO {
+public class CreateItemDto {
 
-    @NotBlank
-    @Size(max = 255)
+    @NotBlank(message = "Description can not be blank")
+    @Size(max = 255, message = "Max size of the description is 255")
     private String description;
 
     @JsonProperty("due_datetime")
-    @FutureOrPresent
+    @FutureOrPresent(message = "Due datetime can not be in the past")
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
     private LocalDateTime dueDatetime;
 
