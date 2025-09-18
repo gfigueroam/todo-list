@@ -2,11 +2,15 @@ package org.tradebyte.todolist.validator;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
 
 public class AtLeastOneNotNullValidator implements ConstraintValidator<AtLeastOneNotNull, Object> {
     private String[] fields;
+
+    Logger logger = LoggerFactory.getLogger(AtLeastOneNotNullValidator.class);
 
     @Override
     public void initialize(AtLeastOneNotNull constraintAnnotation) {
@@ -26,7 +30,7 @@ public class AtLeastOneNotNullValidator implements ConstraintValidator<AtLeastOn
                     return true;
                 }
             } catch (Exception e) {
-                //addd log
+                logger.error(e.getMessage());
             }
         }
         return false;
