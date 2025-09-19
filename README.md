@@ -28,6 +28,7 @@ Assumptions:
     - `spring-boot-starter-validation` (input validation)
     - `spring-boot-starter-data-jpa` (ORM & persistence)
     - `spring-boot-starter-test` (testing framework)
+    - `spring-boot-starter-actuator`(health checks and metrics)
 - **H2 Database 2.2.224** (in-memory persistence)
 - **Lombok 1.18.38** (boilerplate reduction)
 - **JUnit Platform Suite 1.13.4** (test suite aggregation)
@@ -58,6 +59,8 @@ Your application will be available at http://localhost:8080.
 
 ###  Add a new To-Do item
 **POST** `/api/v1/items`
+
+The following fields will be defaulted at creation. status = 'NOT_DONE', creation_datetime = now
 
 **Request body**
 ```json
