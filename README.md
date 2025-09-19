@@ -61,7 +61,7 @@ Your application will be available at http://localhost:8080.
 ## 4. REST API Reference
 
 ###  Add a new To-Do item
-**POST** `/api/v1/items`
+**POST** `/api/v1/todos`
 
 The following fields will be defaulted at creation. status = 'NOT_DONE', creation_datetime = now
 
@@ -95,7 +95,7 @@ The following fields will be defaulted at creation. status = 'NOT_DONE', creatio
 
 
 ###  Update an existing To-Do item
-**PATCH** `/api/v1/items/{id}`
+**PATCH** `/api/v1/todos/{id}`
 
 This method can be used to update the description and to mark the item as DONE/NOT_DONE.
 
@@ -129,7 +129,7 @@ This method can be used to update the description and to mark the item as DONE/N
 
 
 ###  Get an existing To-Do item
-**GET** `/api/v1/items/{id}`
+**GET** `/api/v1/todos/{id}`
 
 **Response**
 ```json
@@ -145,11 +145,11 @@ This method can be used to update the description and to mark the item as DONE/N
 
 
 ###  Get To-Do items
-**GET** `/api/v1/items` 
+**GET** `/api/v1/todos` 
 
-**GET** `/api/v1/items?status=NOT_DONE`
+**GET** `/api/v1/todos?status=NOT_DONE`
 
-**GET** `/api/v1/items?status=size=10&page=0`
+**GET** `/api/v1/todos?status=size=10&page=0`
 
 This method can be used to get all the items, as well as get all items by status. Besides of implementing pagination.
 
