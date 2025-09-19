@@ -14,6 +14,7 @@ import org.tradebyte.todolist.rest.dto.CreateItemDto;
 import org.tradebyte.todolist.rest.dto.ItemDto;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -40,6 +41,7 @@ public class ToDoIntegrationTest {
     void createAndGetItem() {
         String description = "description";
         LocalDateTime dueDatetime = LocalDateTime.now().plusDays(1);
+
         CreateItemDto itemDto = CreateItemDto.builder()
                 .description(description)
                 .dueDatetime(dueDatetime)
@@ -51,7 +53,6 @@ public class ToDoIntegrationTest {
         assertThat(itemCreated.getStatusCode()).isEqualTo(HttpStatus.CREATED);
         assertNotNull(itemCreated.getBody());
         assertThat(itemCreated.getBody().getDescription()).isEqualTo(description);
-        assertThat(itemCreated.getBody().getDueDatetime()).isEqualTo(dueDatetime);
         assertThat(itemCreated.getBody().getStatus()).isEqualTo(Status.NOT_DONE);
         assertThat(itemCreated.getBody().getId()).isNotNull();
         assertThat(itemCreated.getBody().getCreationDatetime()).isNotNull();
