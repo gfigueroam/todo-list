@@ -18,6 +18,9 @@ Assumptions:
 - No user authentication/authorization is required.
 - Service is runnable via Docker.
 - Persistence uses an in-memory **H2 database** for simplicity.
+- The automatic status update does not need to be real-time, but the API restriction should use the up-to-date values.
+- No other services will utilize the database; communication will be handled through events.
+- There are some TODO comments in the code with tasks that were not covered.
 
 ---
 
