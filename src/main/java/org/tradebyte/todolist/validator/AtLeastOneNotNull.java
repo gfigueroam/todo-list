@@ -15,10 +15,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface AtLeastOneNotNull {
     String message() default "At least one field must be not null";
-
     Class<?>[] groups() default {};
-
     Class<? extends Payload>[] payload() default {};
-
     String[] fields(); // List of fields to check
 }

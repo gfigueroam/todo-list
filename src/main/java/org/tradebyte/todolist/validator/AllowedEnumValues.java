@@ -16,10 +16,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface AllowedEnumValues {
     Status[] allowed();
-
     String message() default "must be one of {allowed}";
-
     Class<?>[] groups() default {};
-
     Class<? extends Payload>[] payload() default {};
 }
